@@ -5,16 +5,22 @@ namespace EmployeeWageComputation
     class Program
     {
         public static int WAGE_PER_HR = 20;
+        public static int PART_TIME = 2;
+        public static int FULL_TIME = 1;
         static void Main(string[] args)
         {
-            int IS_FULL_TIME = 1;
             int salary, workingHr = 0;
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == IS_FULL_TIME)
+            int empCheck = random.Next(0, 3);
+            if (empCheck == FULL_TIME)
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Full Time Employee");
                 workingHr = 8;
+            }
+            else if(empCheck == PART_TIME)
+            {
+                Console.WriteLine("Part Time Employee");
+                workingHr = 4;
             }
             else
             {

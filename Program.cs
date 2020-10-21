@@ -12,7 +12,7 @@ namespace EmployeeWageComputation
             if(empCheck==IS_FULL_TIME)
                 Console.WriteLine("Employee is Present");
             else
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is Absent");
         }
     }
 }

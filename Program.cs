@@ -11,9 +11,9 @@ namespace EmployeeWageComputation
         public const int MAX_WORKING_HRS = 100;
         static void Main(string[] args)
         {
-            int salary, totalWorkingHr = 0, totalWorkingDays = 0;
+            int salary=0, totalWorkingHr = 0, totalWorkingDays = 0;
             int totalSalary = 0, workingHr;
-            while (totalWorkingHr < MAX_WORKING_HRS && totalWorkingDays < MAX_WORKING_HRS)
+            while (totalWorkingHr < MAX_WORKING_HRS && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -34,10 +34,11 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalWorkingHr = totalWorkingHr + workingHr;
+                //Console.WriteLine("Days:" + totalWorkingDays +"  " + "EmployeeWorkingHrs:" + workingHr);
             }
             totalSalary = totalWorkingHr * WAGE_PER_HR;
-            Console.WriteLine("totalWorkingHr" + totalWorkingHr);
-            Console.WriteLine("totalSalary" + totalSalary);
+            Console.WriteLine("totalWorkingDays:" +totalWorkingDays +" " +"totalWorkingHr:" 
+                +totalWorkingHr +"  " +"totalSalary:" + totalSalary);
         }
     }
 }

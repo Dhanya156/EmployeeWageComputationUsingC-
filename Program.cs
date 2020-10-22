@@ -13,6 +13,13 @@ namespace EmployeeWageComputation
             int totalWorkingHr = 0, totalWorkingDays = 0;
             int totalSalary = 0, workingHr=0;
             while (totalWorkingHr < maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+        public const int NUMBER_OF_WORKING_DAYS = 20;
+        public const int MAX_WORKING_HRS = 100;
+        public static void ComputeEmployeeWage()
+        {
+            int totalWorkingHr = 0, totalWorkingDays = 0;
+            int totalSalary = 0, workingHr;
+            while (totalWorkingHr < MAX_WORKING_HRS && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -42,6 +49,15 @@ namespace EmployeeWageComputation
         {
             ComputeEmployeeWage("HappiestMind", 20, 2, 10);
             ComputeEmployeeWage("BridgeLabz", 20, 2, 10);
+                Console.WriteLine("Days:" + totalWorkingDays + "  " + "EmployeeWorkingHrs:" + workingHr);
+            }
+            totalSalary = totalWorkingHr * WAGE_PER_HR;
+            Console.WriteLine("totalWorkingDays:" + totalWorkingDays + " " + "totalWorkingHr:"
+                + totalWorkingHr + "  " + "totalSalary:" + totalSalary);
+        }
+        public static void Main(String[] args)
+        {
+            ComputeEmployeeWage();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace EmployeeWageComputation
         private int wagePerHr;
         private int numOfWorkingDays;
         private int maxHoursPerMonth;
-        private int totalSalary;
+        public int totalSalary = 0;
 
         public EmpWageBuilderObject(string company, int wagePerHr, int numOfWorkingDays, int maxHoursPerMonth)
         {

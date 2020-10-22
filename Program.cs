@@ -4,16 +4,13 @@ namespace EmployeeWageComputation
 {
     class Program
     {
-        public static int WAGE_PER_HR = 20;
         public const int PART_TIME = 2;
         public const int FULL_TIME = 1;
-        public const int NUMBER_OF_WORKING_DAYS = 20;
-        public const int MAX_WORKING_HRS = 100;
-        public static void ComputeEmployeeWage()
+        public static void ComputeEmployeeWage(string company, int wagePerHr, int numOfWorkingDays, int maxHoursPerMonth)
         {
             int totalWorkingHr = 0, totalWorkingDays = 0;
             int totalSalary = 0, workingHr;
-            while (totalWorkingHr < MAX_WORKING_HRS && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
+            while (totalWorkingHr < maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -34,15 +31,15 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalWorkingHr = totalWorkingHr + workingHr;
-                Console.WriteLine("Days:" + totalWorkingDays + "  " + "EmployeeWorkingHrs:" + workingHr);
+                //Console.WriteLine("Days:" + totalWorkingDays + "  " + "EmployeeWorkingHrs:" + workingHr);
             }
-            totalSalary = totalWorkingHr * WAGE_PER_HR;
-            Console.WriteLine("totalWorkingDays:" + totalWorkingDays + " " + "totalWorkingHr:"
-                + totalWorkingHr + "  " + "totalSalary:" + totalSalary);
+            totalSalary = totalWorkingHr * wagePerHr;
+            Console.WriteLine("The wages for a company" +company+ "  " + "totalSalary:" + totalSalary);
         }
         public static void Main(String[] args)
         {
-            ComputeEmployeeWage();
+            ComputeEmployeeWage("Tcs", 10, 20, 30);
+            ComputeEmployeeWage("HappiestMind", 5, 15, 20);
         }
     }
 }

@@ -34,11 +34,11 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalWorkingHr = totalWorkingHr + workingHr;
-                Console.WriteLine("Days:" + totalWorkingDays +"  " + "EmployeeWorkingHrs:" + workingHr);
+                Console.WriteLine("Days:" + totalWorkingDays + "  " + "EmployeeWorkingHrs:" + workingHr);
             }
             totalSalary = totalWorkingHr * WAGE_PER_HR;
-            Console.WriteLine("totalWorkingDays:" +totalWorkingDays +" " +"totalWorkingHr:" 
-                +totalWorkingHr +"  " +"totalSalary:" + totalSalary);
+            Console.WriteLine("totalWorkingDays:" + totalWorkingDays + " " + "totalWorkingHr:"
+                + totalWorkingHr + "  " + "totalSalary:" + totalSalary);
         }
         public static void Main(String[] args)
         {

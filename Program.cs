@@ -9,9 +9,9 @@ namespace EmployeeWageComputation
         public const int FULL_TIME = 1;
         public const int NUMBER_OF_WORKING_DAYS = 20;
         public const int MAX_WORKING_HRS = 100;
-        static void Main(string[] args)
+        public static void ComputeEmployeeWage()
         {
-            int salary=0, totalWorkingHr = 0, totalWorkingDays = 0;
+            int totalWorkingHr = 0, totalWorkingDays = 0;
             int totalSalary = 0, workingHr;
             while (totalWorkingHr < MAX_WORKING_HRS && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
             {
@@ -34,11 +34,15 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalWorkingHr = totalWorkingHr + workingHr;
-                //Console.WriteLine("Days:" + totalWorkingDays +"  " + "EmployeeWorkingHrs:" + workingHr);
+                Console.WriteLine("Days:" + totalWorkingDays +"  " + "EmployeeWorkingHrs:" + workingHr);
             }
             totalSalary = totalWorkingHr * WAGE_PER_HR;
             Console.WriteLine("totalWorkingDays:" +totalWorkingDays +" " +"totalWorkingHr:" 
                 +totalWorkingHr +"  " +"totalSalary:" + totalSalary);
+        }
+        public static void Main(String[] args)
+        {
+            ComputeEmployeeWage();
         }
     }
 }

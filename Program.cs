@@ -4,9 +4,15 @@ namespace EmployeeWageComputation
 {
     class Program
     {
-        public static int WAGE_PER_HR = 20;
+       
         public const int PART_TIME = 2;
         public const int FULL_TIME = 1;
+        
+        public static void ComputeEmployeeWage(string company, int wagePerHr, int numOfWorkingDays, int maxHoursPerMonth)
+        {
+            int totalWorkingHr = 0, totalWorkingDays = 0;
+            int totalSalary = 0, workingHr=0;
+            while (totalWorkingHr < maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
         public const int NUMBER_OF_WORKING_DAYS = 20;
         public const int MAX_WORKING_HRS = 100;
         public static void ComputeEmployeeWage()
@@ -34,6 +40,15 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalWorkingHr = totalWorkingHr + workingHr;
+                Console.WriteLine("Days:" + totalWorkingDays +"  " + "EmployeeWorkingHrs:" + workingHr);
+            }
+            totalSalary = totalWorkingHr * wagePerHr;
+            Console.WriteLine( "The Employee Wage for a Company:" + company +" is " + totalSalary);
+        }
+        public static void Main(string[] arg)
+        {
+            ComputeEmployeeWage("HappiestMind", 20, 2, 10);
+            ComputeEmployeeWage("BridgeLabz", 20, 2, 10);
                 Console.WriteLine("Days:" + totalWorkingDays + "  " + "EmployeeWorkingHrs:" + workingHr);
             }
             totalSalary = totalWorkingHr * WAGE_PER_HR;
